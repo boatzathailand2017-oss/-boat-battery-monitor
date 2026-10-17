@@ -1,14 +1,1 @@
-{
-  "name": "BOAT ELECTRIC Battery Monitor",
-  "short_name": "BOAT Battery",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#101923",
-  "theme_color": "#101923",
-  "description": "Demo battery monitoring dashboard",
-  "icons": [
-    {"src": "./icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "./icon-512.png", "sizes": "512x512", "type": "image/png"}
-  ]
-}
+{"name":"BOAT ELECTRIC Battery Monitor","short_name":"BOAT Battery","start_url":"./","scope":"./","display":"standalone","background_color":"#101923","theme_color":"#101923","description":"Interactive read-only BMS UI demo","icons":[{"src":"./icon-192.png","sizes":"192x192","type":"image/png"},{"src":"./icon-512.png","sizes":"512x512","type":"image/png"}]}

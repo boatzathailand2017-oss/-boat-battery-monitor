@@ -1,59 +1,39 @@
 <!doctype html>
-<html lang="th">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#101923">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="BOAT Battery">
-<meta name="description" content="BOAT ELECTRIC Battery Monitor demo">
-<link rel="manifest" href="./manifest.json">
-<link rel="apple-touch-icon" href="./icon-192.png">
-<title>BOAT ELECTRIC | Battery Monitor</title>
+<html lang="th"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101923"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="BOAT Battery">
+<link rel="apple-touch-icon" href="./icon-192.png"><link rel="manifest" href="./manifest.json"><title>BOAT ELECTRIC Battery Monitor</title>
 <style>
-:root{color-scheme:dark;--bg:#101923;--panel:#1b2935;--card:#253541;--muted:#aab8c5;--green:#61efb2;--line:#354553}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:#f4f5fa;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-header{background:var(--panel);padding:20px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:2;border-bottom:1px solid #263744}
-.logo{width:46px;height:46px;border-radius:14px;background:#19b87a;display:grid;place-items:center;font-size:28px;color:#0c1c20;font-weight:bold}
-h1{font-size:17px;margin:0}.sub{font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:1.4px}.pill{margin-left:auto;border:1px solid #3a594e;color:var(--green);border-radius:99px;padding:7px 9px;font-size:10px;white-space:nowrap}
-main{max-width:700px;margin:auto;padding:18px 14px 30px}.intro{color:var(--muted);font-size:13px;margin:2px 3px 16px;line-height:1.5}
-.hero,.tile,.section{background:var(--card);border-radius:21px;box-shadow:0 8px 24px #0002}.hero{text-align:center;padding:25px 20px 22px}.battery{font-size:58px;color:var(--green);line-height:1.2}.eyebrow{color:#d4d9e2;font-size:13px;letter-spacing:1.3px;margin-top:12px}.voltage{font-size:clamp(44px,12vw,62px);font-weight:750;margin:13px 0 2px;letter-spacing:-1px}.caption{color:#c3ccd5;font-size:13px}.bar{height:9px;border-radius:99px;background:#4b4a5e;margin:22px 0 8px;overflow:hidden}.bar>div{height:100%;width:76.8%;background:var(--green);border-radius:99px;transition:width .2s}.barlabel{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:13px}.tile{padding:16px;min-width:0}.label{color:var(--muted);font-size:12px;margin-bottom:8px}.value{font-size:24px;font-weight:700;overflow-wrap:anywhere}.unit{font-size:13px;color:var(--muted);font-weight:500}
-.section{margin-top:13px;padding:18px}.section h2{margin:0 0 12px;font-size:16px}.row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.row:last-of-type{border:0}.row span:first-child{color:var(--muted)}.ok{color:var(--green)}.warn{color:#ff7777}
-.controls{display:flex;gap:9px;margin-top:14px}button{border:0;border-radius:12px;background:var(--green);color:#10221d;font-weight:700;padding:13px 12px;font-size:13px;min-height:45px;flex:1}button.secondary{background:#354553;color:#f4f5fa;border:1px solid #4b5d6b}.tiny{color:var(--muted);font-size:11px;line-height:1.5}.notice{margin-top:14px;border:1px solid #5b4c2c;background:#302b20;color:#f3d9a1;padding:13px;border-radius:13px;font-size:12px;line-height:1.55}footer{text-align:center;padding:12px 20px 28px;color:#8494a3;font-size:11px}
-@media(min-width:560px){main{padding-top:25px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.value{font-size:21px}}
-</style>
-</head>
-<body>
-<header><div class="logo">ϟ</div><div><h1>BOAT ELECTRIC</h1><div class="sub">BATTERY MONITOR</div></div><div class="pill">DEMO MODE</div></header>
+:root{color-scheme:dark;--bg:#101923;--panel:#1b2935;--card:#253541;--muted:#aab8c5;--green:#61efb2;--line:#40515e}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f4f7fa;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}header{display:flex;align-items:center;gap:12px;padding:18px 16px;background:var(--panel);position:sticky;top:0;z-index:3;border-bottom:1px solid #34434e}.logo{height:45px;width:45px;border-radius:14px;background:#61efb2;color:#10231b;display:grid;place-items:center;font-size:29px;font-weight:900}h1{font-size:16px;margin:0}.sub{font-size:10px;letter-spacing:1.5px;color:var(--muted);margin-top:4px}.pill{margin-left:auto;border:1px solid #705b30;border-radius:30px;color:#ffd580;font-size:10px;padding:7px 9px}main{max-width:720px;margin:auto;padding:15px}.banner{padding:12px 14px;border-radius:14px;background:#302b20;border:1px solid #67542c;color:#f4d99d;font-size:12px;line-height:1.5;margin-bottom:14px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.tab{background:#253541;border:1px solid #40515e;color:#e9eff5;border-radius:12px;padding:12px 4px;font-size:12px;font-weight:700}.tab.active{background:var(--green);color:#10231b;border-color:var(--green)}.panel{background:var(--card);border-radius:18px;padding:17px;margin-bottom:12px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.panel h2{font-size:16px;margin:0}.status{font-size:11px;color:#ffd580;border:1px solid #705b30;border-radius:20px;padding:6px 8px}.big{font-size:42px;font-weight:800;letter-spacing:-1px;margin:12px 0 0}.muted{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{background:#1b2935;padding:13px;border-radius:13px}.metric .label{font-size:11px;color:var(--muted);margin-bottom:8px}.metric .val{font-size:22px;font-weight:750;overflow-wrap:anywhere}.metric small{font-size:12px;color:var(--muted);font-weight:500}.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:12px}.row:last-child{border:0}.row span{color:var(--muted)}button{font:inherit;cursor:pointer}.actions{display:flex;gap:8px;margin-top:12px}.btn{border:0;border-radius:11px;padding:12px;background:var(--green);color:#10231b;font-weight:750;flex:1;font-size:12px}.btn.secondary{background:#354653;color:#fff;border:1px solid #4c606e}.btn.danger{background:#452b30;color:#ffb8b8;border:1px solid #74434a}.hidden{display:none}.cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.cell{background:#1b2935;border-radius:10px;padding:10px 5px;text-align:center}.cell strong{display:block;font-size:13px}.cell span{font-size:10px;color:var(--muted)}.log{font-size:12px;line-height:1.6;color:#d1dbe3;white-space:pre-wrap;overflow-wrap:anywhere;background:#15212b;padding:12px;border-radius:10px;min-height:50px}.field{width:100%;background:#15212b;color:#fff;border:1px solid #526473;border-radius:10px;padding:12px;margin:6px 0 10px}.foot{text-align:center;color:#80909e;font-size:10px;padding:10px 10px 25px}
+</style></head><body>
+<header><div class="logo">ϟ</div><div><h1>BOAT ELECTRIC</h1><div class="sub">BATTERY MONITOR</div></div><div class="pill">APP DEMO</div></header>
 <main>
-<p class="intro">แดชบอร์ดตรวจสอบสถานะแบตเตอรี่ • เว็บแอปตัวอย่างสำหรับ iPhone</p>
-<section class="hero">
-<div class="battery">▣</div><div class="eyebrow">BATTERY STATUS</div>
-<div class="voltage"><span id="voltage">76.8</span> <span style="font-size:.52em">V</span></div>
-<div class="caption">แรงดันแบตเตอรี่รวม (ค่าจำลอง)</div>
-<div class="bar"><div id="chargebar"></div></div><div class="barlabel"><span>ระดับจำลอง</span><strong id="soc">76.8%</strong></div>
+<div class="banner"><b>โหมดตัวอย่าง:</b> ปุ่มและเมนูใช้งานได้ แต่ยังไม่เชื่อมต่อ BMS จริง ค่าตัวเลขเป็นข้อมูลจำลอง ห้ามใช้ตัดสินความปลอดภัยของแบตเตอรี่</div>
+<div class="tabs"><button class="tab active" data-page="overview">ภาพรวม</button><button class="tab" data-page="jk">JK BMS</button><button class="tab" data-page="ant">ANT BMS</button></div>
+<section id="overview" class="page">
+<div class="panel"><div class="panelhead"><h2>สถานะแบตเตอรี่ทั้งหมด</h2><span class="status">DEMO / ออฟไลน์</span></div><div class="grid">
+<div class="metric"><div class="label">จำนวนแพ็ก</div><div class="val">2 <small>แพ็ก</small></div></div><div class="metric"><div class="label">เชื่อมต่อ BMS จริง</div><div class="val">0 <small>/ 2</small></div></div>
+<div class="metric"><div class="label">JK BMS</div><div class="val" id="ovjk">รอ</div></div><div class="metric"><div class="label">ANT BMS</div><div class="val" id="ovant">รอ</div></div>
+</div><div class="actions"><button class="btn" id="refresh">↻ รีเฟรชตัวอย่าง</button><button class="btn secondary" id="export">ส่งออกข้อมูล</button></div></div>
+<div class="panel"><div class="panelhead"><h2>เหตุการณ์ล่าสุด</h2><span class="muted">ภายในแอป</span></div><div class="log" id="log">แอปเริ่มทำงานแล้ว\nยังไม่มี BMS เชื่อมต่อ</div></div>
 </section>
-<section class="grid">
-<div class="tile"><div class="label">กระแสไฟ / Current</div><div class="value"><span id="current">12.5</span><span class="unit"> A</span></div></div>
-<div class="tile"><div class="label">กำลังไฟ / Power</div><div class="value"><span id="power">0.96</span><span class="unit"> kW</span></div></div>
-<div class="tile"><div class="label">อุณหภูมิ / Temp</div><div class="value"><span id="temp">32</span><span class="unit"> °C</span></div></div>
-<div class="tile"><div class="label">สถานะระบบ</div><div class="value ok" id="state">ปกติ</div></div>
+<section id="jk" class="page hidden">
+<div class="panel"><div class="panelhead"><h2>JK BMS</h2><span class="status" id="jkstatus">ยังไม่เชื่อมต่อ</span></div><div class="muted">แรงดันรวม / Pack Voltage</div><div class="big"><span id="jkv">76.8</span> <span style="font-size:17px">V</span></div><div class="grid" style="margin-top:14px"><div class="metric"><div class="label">กระแส</div><div class="val"><span id="jka">12.5</span><small> A</small></div></div><div class="metric"><div class="label">ประจุคงเหลือ</div><div class="val"><span id="jksoc">76</span><small> %</small></div></div><div class="metric"><div class="label">อุณหภูมิ BMS</div><div class="val"><span id="jkt">31</span><small> °C</small></div></div><div class="metric"><div class="label">กำลังไฟ</div><div class="val"><span id="jkw">0.96</span><small> kW</small></div></div></div><h2 style="margin:18px 0 10px;font-size:14px">แรงดันเซลล์ (ตัวอย่าง 16 เซลล์)</h2><div class="cells" id="jkcells"></div><div class="actions"><button class="btn" id="jkdemo">ทดสอบหน้าจอ JK</button><button class="btn secondary" id="jkalarm">ทดสอบแจ้งเตือน</button></div></div>
 </section>
-<section class="section"><h2>รายละเอียดระบบ</h2>
-<div class="row"><span>ชุดแบตเตอรี่</span><strong>PACK 01 — DEMO</strong></div>
-<div class="row"><span>การเชื่อมต่อ BMS</span><strong>ยังไม่ได้เชื่อมต่อ</strong></div>
-<div class="row"><span>อัปเดตล่าสุด</span><strong id="updated">—</strong></div>
-<div class="controls"><button id="refresh">⟳ สุ่มค่าทดลอง</button><button class="secondary" id="reset">คืนค่าเริ่มต้น</button></div>
-<p class="tiny">ปุ่มสุ่มค่าจะเปลี่ยนเฉพาะข้อมูลตัวอย่าง ไม่ได้อ่านข้อมูลจากแบตเตอรี่จริง</p>
+<section id="ant" class="page hidden">
+<div class="panel"><div class="panelhead"><h2>ANT BMS</h2><span class="status" id="antstatus">ยังไม่เชื่อมต่อ</span></div><div class="muted">รุ่น 24ZH E6-24S-130A · แรงดันรวม</div><div class="big"><span id="antv">76.4</span> <span style="font-size:17px">V</span></div><div class="grid" style="margin-top:14px"><div class="metric"><div class="label">กระแส</div><div class="val"><span id="anta">8.2</span><small> A</small></div></div><div class="metric"><div class="label">ประจุคงเหลือ</div><div class="val"><span id="antsoc">69</span><small> %</small></div></div><div class="metric"><div class="label">อุณหภูมิ BMS</div><div class="val"><span id="antt">30</span><small> °C</small></div></div><div class="metric"><div class="label">กำลังไฟ</div><div class="val"><span id="antw">0.63</span><small> kW</small></div></div></div><h2 style="margin:18px 0 10px;font-size:14px">แรงดันเซลล์ (ตัวอย่าง 24 เซลล์)</h2><div class="cells" id="antcells"></div><div class="actions"><button class="btn" id="antdemo">ทดสอบหน้าจอ ANT</button><button class="btn secondary" id="antalarm">ทดสอบแจ้งเตือน</button></div></div>
 </section>
-<div class="notice"><strong>ข้อควรระวัง:</strong> ข้อมูลทั้งหมดเป็นค่าจำลอง ยังไม่ได้เชื่อมต่อ JK BMS, ANT BMS หรืออุปกรณ์จริง ห้ามใช้ค่าจำลองเพื่อตัดสินความปลอดภัยของแบตเตอรี่</div>
-</main><footer>BOAT ELECTRIC · Battery Monitor Demo · Web App</footer>
+<section class="panel"><h2 style="margin-bottom:12px">การตั้งค่าแอป</h2><div class="row"><span>แหล่งข้อมูล</span><strong>ข้อมูลตัวอย่างในเครื่อง</strong></div><div class="row"><span>โหมดคำสั่ง</span><strong>อ่านอย่างเดียว (Read-only)</strong></div><div class="row"><span>คลาวด์</span><strong>ยังไม่ได้ตั้งค่า</strong></div><label class="muted" for="packname">ชื่อชุดแบตเตอรี่</label><input id="packname" class="field" value="BOAT ELECTRIC Pack"><button class="btn" id="save">บันทึกชื่อในเครื่อง</button><div class="actions"><button class="btn secondary" id="clearlog">ล้างเหตุการณ์</button><button class="btn danger" id="reset">คืนค่าตัวอย่าง</button></div></section>
+<div class="foot">BOAT ELECTRIC · Interactive UI Demo · ไม่ได้เชื่อมต่อ BMS จริง</div>
+</main>
 <script>
-const initial={v:76.8,a:12.5,t:32};const $=id=>document.getElementById(id);
-function render(v,a,t){$('voltage').textContent=v.toFixed(1);$('current').textContent=a.toFixed(1);$('power').textContent=(v*a/1000).toFixed(2);$('temp').textContent=t.toFixed(1).replace('.0','');let soc=Math.max(0,Math.min(100,v));$('soc').textContent=soc.toFixed(1)+'%';$('chargebar').style.width=soc+'%';$('state').textContent=t>=50?'ตรวจสอบอุณหภูมิ':'ปกติ';$('state').className='value '+(t>=50?'warn':'ok');$('updated').textContent=new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
-$('refresh').addEventListener('click',()=>render(72+Math.random()*12,Math.random()*35,27+Math.random()*32));$('reset').addEventListener('click',()=>render(initial.v,initial.a,initial.t));render(initial.v,initial.a,initial.t);
-if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-</script>
-</body></html>
+const $=id=>document.getElementById(id);const log=(s)=>{$('log').textContent=new Date().toLocaleTimeString('th-TH')+' — '+s+'\\n'+$('log').textContent;};function cells(id,n,base){let el=$(id);el.innerHTML='';for(let i=1;i<=n;i++){let v=base+((i%5)-2)*.004;let d=document.createElement('div');d.className='cell';d.innerHTML='<span>Cell '+i+'</span><strong>'+v.toFixed(3)+' V</strong>';el.appendChild(d)}}
+cells('jkcells',16,3.30);cells('antcells',24,3.18);
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(p=>p.classList.toggle('hidden',p.id!==b.dataset.page));log('เปิดหน้า '+b.textContent)}));
+function randomJK(){let v=75+Math.random()*4,a=Math.random()*25,s=55+Math.random()*40,t=28+Math.random()*15;$('jkv').textContent=v.toFixed(1);$('jka').textContent=a.toFixed(1);$('jksoc').textContent=s.toFixed(0);$('jkt').textContent=t.toFixed(1);$('jkw').textContent=(v*a/1000).toFixed(2);cells('jkcells',16,3.25+Math.random()*.1);$('ovjk').textContent='DEMO';log('สุ่มค่าตัวอย่าง JK BMS');}
+function randomANT(){let v=73+Math.random()*5,a=Math.random()*20,s=50+Math.random()*45,t=27+Math.random()*17;$('antv').textContent=v.toFixed(1);$('anta').textContent=a.toFixed(1);$('antsoc').textContent=s.toFixed(0);$('antt').textContent=t.toFixed(1);$('antw').textContent=(v*a/1000).toFixed(2);cells('antcells',24,3.05+Math.random()*.15);$('ovant').textContent='DEMO';log('สุ่มค่าตัวอย่าง ANT BMS');}
+$('refresh').onclick=()=>{randomJK();randomANT()};$('jkdemo').onclick=randomJK;$('antdemo').onclick=randomANT;
+function alarm(pack){alert('ทดสอบการแจ้งเตือน '+pack+'\\nนี่เป็นการทดสอบหน้าจอเท่านั้น ไม่ใช่การตรวจพบความผิดปกติจริง');log('ทดสอบแจ้งเตือน '+pack)}
+$('jkalarm').onclick=()=>alarm('JK BMS');$('antalarm').onclick=()=>alarm('ANT BMS');$('export').onclick=()=>{let data={time:new Date().toISOString(),mode:'DEMO',jk:{voltage:$('jkv').textContent,current:$('jka').textContent,soc:$('jksoc').textContent},ant:{voltage:$('antv').textContent,current:$('anta').textContent,soc:$('antsoc').textContent}};let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='boat-battery-demo.json';a.click();URL.revokeObjectURL(a.href);log('ส่งออกข้อมูลตัวอย่าง');};
+$('save').onclick=()=>{try{localStorage.setItem('boatPackName',$('packname').value);alert('บันทึกชื่อในเครื่องแล้ว');log('บันทึกชื่อชุดแบตเตอรี่')}catch(e){alert('บันทึกไม่ได้ในโหมดนี้')}};$('packname').value=localStorage.getItem('boatPackName')||'BOAT ELECTRIC Pack';$('clearlog').onclick=()=>$('log').textContent='ล้างเหตุการณ์แล้ว';$('reset').onclick=()=>location.reload();
+</script></body></html>
